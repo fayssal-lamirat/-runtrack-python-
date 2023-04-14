@@ -1,0 +1,18 @@
+def arrondir_notes(notes):
+    notes_arrondies = []
+    for note in notes:
+        if note < 40:
+            notes_arrondies.append(note)  # L'étudiant a échoué, on garde sa note telle quelle
+        
+        else:
+            if note % 5 >= 3:  # La note est proche d'un multiple de 5, on l'arrondit
+                note_arrondie = note + (5 - (note % 5))
+            
+            else:
+                note_arrondie = note
+            notes_arrondies.append(note_arrondie)
+    return notes_arrondies
+
+notes = [72, 58, 91, 40, 85, 77]
+notes_arrondies = arrondir_notes(notes)
+print(notes_arrondies)
